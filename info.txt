@@ -1,0 +1,45 @@
+
+  MIU Leaderboards
+  (Want to watch replays in the browser? Check out olofspelar.se/replayviewer)
+
+  ## Leaderboards
+  - Platform (Global, Steam, Switch, Steam_Mayhem, Custom)
+
+ ------------------
+  -## Classic / Mayhem
+  - Level (string)
+  - Amount (Limit) (number)
+  - Skip (number)
+
+  -Advanced settings
+  - orderBy (username, time, mapID, skinUsed, platform, updatedAt)
+  - orderByDescending (boolean)
+  - usernameQuery (string)
+  ------------------
+  -## Custom / Workshop
+  - Level (string)
+  - Amount (Limit) (number)
+  - Skip (number)
+  ------------------
+
+  ## Data
+  "jsonData" (classic information)
+  Show off the data in some text or something
+  And a download button
+  
+  - classicLevels 
+  - ultimateTimes
+  - diamondTimes
+  - goldTimes
+  - silverTimes
+  
+  "custom LevelData"
+
+  - allLevel (all levels)
+
+  -# Custom level information
+  - newestLevel
+  - levelName
+  - UGCQuery
+  - QueryStart
+  - QueryEnd

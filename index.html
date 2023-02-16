@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="./src/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MIU Leaderboards</title>
+	<link rel="icon" href="./assets/DiamondMedal.png" type="image/png" sizes="64x64">
+
+	<meta content="website" property="og:type" >
+	<meta content="MIU Leaderboards" property="og:title">
+	<meta content="A site to view any leaderboards on any platform for Marble It Up!" property="og:description">
+	<meta content="https://olofspelar.se/leaderboard/" property="og:url">
+	<meta content="#69b0db" data-react-helmet="true" name="theme-color">
+</head>
+
+<body>
+	
+	<div class="backgroundDiv">
+		<img class="backgroundImage">
+		<div class="backgroundTransparency">
+			<div class="topContainer">
+				<p>MIU Leaderboards</p>
+
+				<div class="platformInput">
+					<label for="platform">Platform</label>
+
+					<select name="platform" id="platform" class="selectStyle">
+						<optgroup label="Standard">
+							<option value="Global">Global</option>
+							<option value="Steam">Steam</option>
+							<option value="Switch">Switch</option>
+							<option value="Custom">Custom</option>
+						</optgroup>
+						<optgroup label="Weekly">
+							<option value="Weekly_Global">Global</option>
+							<option value="Weekly_Steam">Steam</option>
+							<option value="Weekly_Switch">Switch</option>
+						</optgroup>
+					</select>
+
+					<button id="fetchButton" class="buttonStyle">Fletch Scores</button>
+
+					<p id="weeklyTitle" class="weeklyTitle">Air Control</p>
+				</div>
+
+				<!--This content area depends on the platform choosen-->
+				<div id="classicOptions" class="classicOptions">
+
+					<!--This gets auto-filled with data from backend-->
+					<div id="basicClassicOptions" class="basicClassicOptions">
+
+						<div class="paramemter">
+							<label for="classicLevel">Level</label>
+							<select name="classicLevel" id="classicLevel" class="selectStyle"></select>
+						</div>
+
+						<div class="paramemter">
+							<label for="Amount">Amount</label>
+							<input type="number" value="10" name="amount" min="1" id="classicAmount"
+								class="amountInput" />
+						</div>
+
+						<div class="paramemter">
+							<label for="Skip">Skip</label>
+							<input type="number" value="0" name="skip" min="0" id="classicSkip" class="amountInput" />
+						</div>
+
+					</div>
+
+					<div id="advancedClassicOptions" class="advancedClassicOptions">
+
+						<div>
+							<label for="orderBy">Order By</label>
+							<select name="orderBy" id="orderBy" class="selectStyle">
+								<option value="username">Username</option>
+								<option value="time" selected="selected">Time</option>
+								<option value="mapID">Level ID</option>
+								<option value="skinUsed">Skin Used</option>
+								<option value="platform">Platform</option>
+								<option value="updatedAt">Updated At</option>
+							</select>
+						</div>
+
+						<div>
+							<label for="orderByDescending">Desc. Order</label>
+							<input type="checkbox" name="orderByDescending" id="orderByDescending"
+								class="checkboxStyle" />
+						</div>
+
+						<div>
+							<label for="usernameQuery">Username</label>
+							<input type="text" name="usernameQuery" id="usernameQuery" class="amountInput textInput" />
+						</div>
+					</div>
+
+				</div>
+
+				<div id="customOptions" class="customOptions" hidden>
+
+					<!--This also gets filled with custom level data from backend-->
+					<label for="customLevel">Custom Level</label>
+
+					<input id="customlevel" placeholder="Custom Level" list="customLevelList"
+						class="selectStyle">
+					<datalist id="customLevelList"></datalist>
+
+					<label for="customAmount">Amount</label>
+					<input type="number" value="10" name="customAmount" min="1" id="customAmount"
+						class="amountInput" />
+
+					<label for="customSkip">Skip</label>
+					<input type="number" value="0" name="customSkip" min="0" id="customSkip"
+						class="amountInput" />
+
+				</div>
+
+			</div>
+
+			<div id="leaderboard" class="leaderboardContainer">
+
+				<table id="LB_Table" class="LB_Table">
+					<tr class="LB_Table_Top">
+						<th class="LB_Table_RankTH">Rank</th>
+						<th>Time</th>
+						<th>Username</th>
+						<th>Platform</th>
+						<th>Date</th>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="offlineMessage" class="offlineMessage">
+		<h1>Server Is Offline...</h1>
+		<h2 id="retryingErrorHeading">retrying in # seconds...</h2>
+	</div>
+
+	<div class="replayViewer">
+      <p>Wanna view replays in the browser?</p>
+      <a href="https://olofspelar.se/replayviewer" target="_blank">Check out my other project!</a>
+    </div>
+
+	<script type="module" src="./src/main.ts"></script>
+</body>
+
+</html>
