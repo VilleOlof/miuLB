@@ -294,7 +294,6 @@ async function AddClassicScores(scores: scores[], usernameQuery?: boolean, AddMe
 	
 	var leaderboardRows = document.getElementById('LB_Table') as HTMLTableElement;
 	leaderboardRows.innerHTML = "";
-
 	leaderboardRows.className = "LB_Table";
 
 	var topRow = leaderboardRows.insertRow(-1);
