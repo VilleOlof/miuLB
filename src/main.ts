@@ -408,7 +408,7 @@ function GetMedalIcon(time: number, level: string): HTMLImageElement {
 	else if (time < silverTimes[level]) return silverIcon.cloneNode(true) as HTMLImageElement;
 	else return bronzeIcon.cloneNode(true) as HTMLImageElement;
 }
-function FormatUsername(username: string): string {
+export function FormatUsername(username: string): string {
 	var username: string = username.substring(0, UsernameMaxLength);
 	if (username.length == UsernameMaxLength) {
 		username += "...";
@@ -417,7 +417,7 @@ function FormatUsername(username: string): string {
 	return username;
 }
 
-function FormatPlatform(platform: string): string {
+export function FormatPlatform(platform: string): string {
 	if (!(platform in Platform)) {
 		return "Shhh";
 	}

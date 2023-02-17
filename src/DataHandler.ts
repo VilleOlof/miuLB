@@ -1,6 +1,6 @@
 import { Platform, PlatformType } from "./main";
 
-function FormatString(str: string, ...val: string[]) {
+export function FormatString(str: string, ...val: string[]) {
     for (let index: number = 0; index < val.length; index++) {
       str = str.toString().replace(`{${index}}`, val[index]);
     }
