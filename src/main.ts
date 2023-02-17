@@ -86,7 +86,7 @@ function CompareClassicRequests(a: ClassicRequest, b: ClassicRequest): boolean {
 	if (a == undefined || b == undefined) return false;
 	return a.platform == b.platform && a.level == b.level && a.amount == b.amount && a.skip == b.skip && a.orderBy == b.orderBy && a.orderByDesc == b.orderByDesc;
 }
-function CompareCustomRequests(a: CustomRequest, b: CustomRequest): boolean {
+export function CompareCustomRequests(a: CustomRequest, b: CustomRequest): boolean {
 	if (a == undefined || b == undefined) return false;
 	return a.start == b.start && a.end == b.end && a.level == b.level;
 }
@@ -386,10 +386,10 @@ var silverTimes: { [key: string]: number}
 var goldTimes: { [key: string]: number}
 var diamondTimes: { [key: string]: number}
 
-const bronzeIcon: HTMLImageElement  = new Image();
-const silverIcon: HTMLImageElement	= new Image();
-const goldIcon: HTMLImageElement 	= new Image();
-const diamondIcon: HTMLImageElement = new Image();
+const bronzeIcon: HTMLImageElement  = document.createElement("img");
+const silverIcon: HTMLImageElement	= document.createElement("img");
+const goldIcon: HTMLImageElement 	= document.createElement("img");
+const diamondIcon: HTMLImageElement = document.createElement("img");
 
 async function LoadMedalTimes(): Promise<void> {
 	silverTimes = await GetMedalTimes("silverTimes"); 
