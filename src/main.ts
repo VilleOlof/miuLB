@@ -425,7 +425,7 @@ export function FormatPlatform(platform: string): string {
 	return platform;
 }
 
-async function CheckServerStatus(): Promise<void> {
+export async function CheckServerStatus(): Promise<void> {
 	var serverOnline: boolean = await Ping(import.meta.env.VITE_BACKEND_IP);
 
 	if (!serverOnline) {
@@ -459,6 +459,3 @@ async function CheckServerStatus(): Promise<void> {
 		Main();
 	}
 }
-
-// Start the application
-CheckServerStatus();
