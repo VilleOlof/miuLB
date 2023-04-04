@@ -46,8 +46,11 @@ test('Test FormatString, Should Return A Combined String Using "{Number}" With S
 test('Test FormatTime, Should Return A Shortened And Better Formatted Time String', () => {
     
     const seconds = 123.456;
+    const seconds_custom = 7.199;
 
     const result = FormatTime(seconds);
+    const result_custom = FormatTime(seconds_custom);
 
     expect(result).toBe('2:03.456');
+    expect(result_custom).toBe('7.199');
 });
